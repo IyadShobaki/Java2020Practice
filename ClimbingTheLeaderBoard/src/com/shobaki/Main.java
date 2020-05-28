@@ -44,7 +44,6 @@ public class Main {
             d++;
         }
 
-
         sortAndReserved(newScores);
 
 
@@ -63,7 +62,6 @@ public class Main {
 
             h++;
         }
-
 
         return positions.get(getPos(newScores, score));
 
