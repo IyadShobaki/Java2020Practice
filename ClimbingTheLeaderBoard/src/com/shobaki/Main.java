@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static int start = 0;
+    public static int start;
 
     public static void main(String[] args) {
         int[] scores = new int[]{100, 100, 50, 40, 40, 20, 10};//DESC
@@ -15,14 +15,16 @@ public class Main {
         System.out.println(Arrays.toString(climbingLeaderboard(scores, aliceScores)));
         //[6, 4, 2, 1] the right answer
 
-//        int[] scores1 = new int[]{100, 90, 90, 80, 75, 60};//DESC
-//        int[] aliceScores1 = new int[]{50, 65, 77, 90, 102};//ASC
-//        System.out.println(Arrays.toString(climbingLeaderboard(scores1,aliceScores1)));
-//        //[6, 5, 4, 2, 1] the right answer
+        int[] scores1 = new int[]{100, 90, 90, 80, 75, 60};//DESC
+        int[] aliceScores1 = new int[]{50, 65, 77, 90, 102};//ASC
+        System.out.println(Arrays.toString(climbingLeaderboard(scores1,aliceScores1)));
+        //[6, 5, 4, 2, 1] the right answer
     }
 
     public static int[] climbingLeaderboard(int[] scores, int[] alice) {
 
+        //
+        start = 0;
         int[] result = new int[alice.length];
         for (int i = 0; i < alice.length; i++) {
             result[i] = getPosition(alice[i], scores);
@@ -41,6 +43,7 @@ public class Main {
             newScores[i] = scores[d];
             d++;
         }
+
 
         sortAndReserved(newScores);
 
