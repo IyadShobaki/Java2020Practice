@@ -9,7 +9,7 @@ public class Car extends Vehicle {
     private int steering;
     private int numberOfWheels;
     private String typeOfPropulsion;
-
+    private int currentGear;
     public Car( String color, int length, int width, String typeOfCar,
                 String make, String model, int steering,
                 int numberOfWheels, String typeOfPropulsion) {
@@ -21,7 +21,14 @@ public class Car extends Vehicle {
         this.numberOfWheels = numberOfWheels;
         this.typeOfPropulsion = typeOfPropulsion;
     }
-
+    public void changeGear(int currentGear) {
+        this.currentGear = currentGear;
+        System.out.println("Car.setCurrentGear(): Changed to "+ this.currentGear + " gear.");
+    }
+    public void changeVelocity(int speed, int direction){
+        System.out.println("Car.changeVelocity() : Velocity " + speed + " direction " + direction);
+        move(speed, direction);
+    }
     public  String getTypeOfCar() {
         return typeOfCar;
     }
